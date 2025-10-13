@@ -1,0 +1,20 @@
+# Node / Frontend
+pokefact-front/node_modules/
+pokefact-front/dist/
+pokefact-front/.env
+pokefact-front/*.log
+
+# Python / Backend
+pokefact-back/__pycache__/
+pokefact-back/*.pyc
+pokefact-back/.env
+
+# Database
+pokefact-db/data/
+pokefact-db/*.sql
+
+# Global
+.vscode/
+.DS_Store
+*.log
+docker-compose.override.yml
