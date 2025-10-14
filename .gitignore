@@ -9,10 +9,6 @@ pokefact-back/__pycache__/
 pokefact-back/*.pyc
 pokefact-back/.env
 
-# Database
-pokefact-db/data/
-pokefact-db/*.sql
-
 # Global
 .vscode/
 .DS_Store
