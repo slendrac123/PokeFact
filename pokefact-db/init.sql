@@ -17,6 +17,7 @@ VALUES
   (94, 'Favorito de muchos.'),
   (94, 'Gengar podria ser la sombra de Clefable.'),
   (143, 'Snorlax puede comer más de 900 libras de comida en un solo día.'),
-  (150, 'Mewtwo es un clon de Mew.');
+  (150, 'Mewtwo es un clon de Mew.'),
+  (497, 'Un pokémon de tipo SSS. Simple Superior Serpent.');
   
   

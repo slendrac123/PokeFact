@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from  app.model.pokefacts import PokeFact
+from app.model.pokefacts import PokeFact
 from fastapi.middleware.cors import CORSMiddleware
 
 pokefact_db = [
