@@ -1,16 +1,19 @@
-# Usa una imagen base de Python
-FROM python:3.11
+# Imagen base
+FROM python:3.12-slim
 
-# Establece el directorio de trabajo dentro del contenedor
+# Crear y movernos al directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos del backend al contenedor
-COPY . /app
+# Copiar archivos de requerimientos
+COPY requirements.txt .
 
-# Instala dependencias
+# Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expón el puerto donde correrá FastAPI
+# Copiar el resto del código
+COPY . .
+
+# Exponer el puerto del backend
 EXPOSE 8000
 
 # Comando para iniciar la app

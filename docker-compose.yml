@@ -1,42 +1,22 @@
-version: '3.8'
+version: "3.9"
 
 services:
-  db:
-    image: postgres:15
-    container_name: pokefact_db
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: pokefact
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - pokefact_net
-
   backend:
     build: ./pokefact-back
-    container_name: pokefact_backend
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5432/pokefact
+    container_name: pokefact-back
     ports:
       - "8000:8000"
-    depends_on:
-      - db
-    networks:
-      - pokefact_net
+    env_file:
+      - .env
+    restart: always
 
   frontend:
     build: ./pokefact-front
-    container_name: pokefact_frontend
+    container_name: pokefact-front
     ports:
       - "5173:5173"
+    env_file:
+      - .env
+    restart: always
     depends_on:
       - backend
-    networks:
-      - pokefact_net
-
-networks:
-  pokefact_net:
-    driver: bridge
