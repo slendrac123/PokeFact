@@ -17,4 +17,7 @@ COPY . .
 EXPOSE 8000
 
 # Comando para iniciar la app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# Comando inicializador - Espera que la BD esté lista antes de iniciar
+CMD ["sh", "-c", "sleep 10 && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"]

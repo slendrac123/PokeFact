@@ -8,10 +8,10 @@ import os
 load_dotenv()
 
 # Leerlas.
-USER = os.getenv("POSTGRES_USER")
-PASSWORD = os.getenv("POSTGRES_PASSWORD")
-DB = os.getenv("POSTGRES_DB")
-HOST = os.getenv("POSTGRES_HOST", "localhost")
+USER = os.getenv("POSTGRES_USER", "admin123")
+PASSWORD = os.getenv("POSTGRES_PASSWORD", "admin123")
+DB = os.getenv("POSTGRES_DB", "pokefact_db")
+HOST = os.getenv("POSTGRES_HOST", "db")
 PORT = os.getenv("POSTGRES_PORT", "5432")
 
 # Crear la URL dinámica
